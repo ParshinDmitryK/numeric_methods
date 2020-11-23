@@ -1,6 +1,8 @@
 #include "include_everywhere.h"
 #include "rotation.h"
 
+USING_STD
+
 namespace slau
 {
     void Rotation_method(int**mas_koef, int*mas_right_side, int x_count)

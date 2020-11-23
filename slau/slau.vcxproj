@@ -156,6 +156,7 @@
     <ClCompile Include="kramer.cpp" />
     <ClCompile Include="lu_decomposition.cpp" />
     <ClCompile Include="newton.cpp" />
+    <ClCompile Include="power_function.cpp" />
     <ClCompile Include="rotation.cpp" />
     <ClCompile Include="slau.cpp" />
   </ItemGroup>
@@ -166,6 +167,7 @@
     <ClInclude Include="kramer.h" />
     <ClInclude Include="lu_decomposition.h" />
     <ClInclude Include="newton.h" />
+    <ClInclude Include="power_function.h" />
     <ClInclude Include="rotation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

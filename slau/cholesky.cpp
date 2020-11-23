@@ -1,6 +1,8 @@
 #include "include_everywhere.h"
 #include "cholesky.h"
 
+USING_STD
+
 namespace slau
 {
     void Cholesky_method(int ** mas_koef, int * mas_right_side, int x_count)
