@@ -11,7 +11,7 @@ namespace slau
         cout << "Cholesky method:" << endl;
         START_TIME;
 
-        int i, j, k, n;
+        int i, j, k;
         double sum_ELij;
         double* mas_Y;
         double* mas_X;
