@@ -1,6 +1,7 @@
 #include "include_everywhere.h"
 #include "kramer.h"
 
+USING_STD
 
 namespace slau
 {

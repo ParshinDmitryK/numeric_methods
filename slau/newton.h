@@ -2,5 +2,5 @@
 
 namespace slau
 {
-    void Newton_method(double* mas_koef, double& right_side, int x_count);
+    void Newton_method(slau::CPowerFunction funct, int left_side, int right_side);
 }

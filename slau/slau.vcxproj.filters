@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Complementary">
+      <UniqueIdentifier>{610e2f4d-4c52-4974-9816-dfcda18ac8bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Complementary\Headers">
+      <UniqueIdentifier>{10f49621-7ad8-4b84-8472-1518409d51b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Complementary\Sources">
+      <UniqueIdentifier>{2c55f257-7679-4bc7-a661-3ee9aaf2fc1c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="slau.cpp">
@@ -36,15 +45,15 @@
     <ClCompile Include="newton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="power_function.cpp">
+      <Filter>Complementary\Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kramer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="gauss.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include_everywhere.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lu_decomposition.h">
@@ -58,6 +67,12 @@
     </ClInclude>
     <ClInclude Include="newton.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include_everywhere.h">
+      <Filter>Complementary\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="power_function.h">
+      <Filter>Complementary\Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

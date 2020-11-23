@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
 #include <omp.h>
-using namespace std;
 
+#define USING_STD using namespace std;
 
 #define START_TIME double start_time; \
 	               start_time = omp_get_wtime();

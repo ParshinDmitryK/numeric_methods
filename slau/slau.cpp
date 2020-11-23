@@ -1,13 +1,16 @@
 ﻿// slau.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 #include "include_everywhere.h"
+#include "power_function.h"
+
 #include "kramer.h"
 #include "gauss.h"
 #include "lu_decomposition.h"
 #include "rotation.h"
 #include "cholesky.h"
+#include "newton.h"
 
-
+USING_STD
 
 int main()
 {
@@ -73,7 +76,9 @@ int main()
 
     DROW_KUBE
     cout << "iteration methods:" << endl;
-
+    slau::CPowerFunction eqtn(4, 1.0, 0.0, -2.0, -5.0);
+    eqtn.printFunction();
+    slau::Newton_method(eqtn, 2, 3);
 
     system("pause");
     return 0;
