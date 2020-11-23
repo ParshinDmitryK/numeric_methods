@@ -17,6 +17,8 @@ namespace slau
         int getPower();
         void setPower(int pwr);
 
+        double getMeaningInPoint(double t_x);
+
         void printFunction();
 
     private:
@@ -24,6 +26,6 @@ namespace slau
         int degree_of_the_equation;
     };
 
-    CPowerFunction GetFirstDerivative(CPowerFunction& function);
+    CPowerFunction* GetDerivative(CPowerFunction* function);
 
 }

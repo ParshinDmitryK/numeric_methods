@@ -22,9 +22,7 @@ int main()
     mas = new int*[n];
     right_side = new int[n];
     for (i = 0; i < n; i++)
-    {
         mas[i] = new int[n];
-    }
 
     /*
      (x1)\ / { 1, 1, 2 }
@@ -76,9 +74,9 @@ int main()
 
     DROW_KUBE
     cout << "iteration methods:" << endl;
-    slau::CPowerFunction eqtn(4, 1.0, 0.0, -2.0, -5.0);
-    eqtn.printFunction();
-    slau::Newton_method(eqtn, 2, 3);
+    slau::CPowerFunction* eqtn = new slau::CPowerFunction(4, 1.0, 0.0, -2.0, -5.0);
+    eqtn->printFunction();
+    slau::Newton_method(eqtn, 2, 3, 0.001);
 
     system("pause");
     return 0;

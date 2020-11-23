@@ -10,30 +10,30 @@
 #define END_TIME double end_time; \
 	             end_time = omp_get_wtime();
 
-#define PRINT_RESULT_CALC_TIME cout << "time to calc: " << end_time - start_time << " sec" << endl;
+#define PRINT_RESULT_CALC_TIME std::cout << "time to calc: " << end_time - start_time << " sec" << std::endl;
 
 
-#define TO_NEW_LINE cout << endl;
+#define TO_NEW_LINE std::cout << std::endl;
 
 #define PRINT_INT_MATRIX_ELEMENT(val) \
 if (val < 0) \
-    cout << val << "   "; \
+    std::cout << val << "   "; \
 else \
-cout << val << "    ";
+    std::cout << val << "    ";
 
 #define PRINT_DOUBLE_MATRIX_ELEMENT(val) \
 if (val - (int)val > 0.0001) \
-cout << val << "   "; \
+std::cout << val << "   "; \
 else \
-cout << val << "         ";
+std::cout << val << "         ";
 
 #define DROW_KUBE \
     TO_NEW_LINE \
-    cout << "   &&&&&   " << endl; \
-    cout << "   &   &   " << endl; \
-    cout << "   &   &   " << endl; \
-    cout << "   &   &   " << endl; \
-    cout << "   &&&&&   " << endl; \
+    std::cout << "   &&&&&   " << std::endl; \
+    std::cout << "   &   &   " << std::endl; \
+    std::cout << "   &   &   " << std::endl; \
+    std::cout << "   &   &   " << std::endl; \
+    std::cout << "   &&&&&   " << std::endl; \
     TO_NEW_LINE
 
 
@@ -46,6 +46,5 @@ inline void makeOneMatrix(int** mas_koef, int* mas_right_side, int rows_count, i
                 masoutput[i][j] = mas_koef[i][j];
             else
                 masoutput[i][j] = mas_right_side[i];
-
         }
 }

@@ -1,5 +1,7 @@
 #include "power_function.h"
-#include <iostream>
+#include "include_everywhere.h"
+
+#include <cmath>
 
 namespace slau
 {
@@ -45,6 +47,14 @@ namespace slau
         degree_of_the_equation = pwr;
     }
 
+    double CPowerFunction::getMeaningInPoint(double t_x)
+    {
+        double sum = 0;
+        for (int i = 0; i < getPower(); i++)
+            sum = sum + getCoefElementX(i)*pow(t_x, getPower() - i - 1);
+        return sum;
+    }
+
     void CPowerFunction::printFunction()
     {
         std::cout << "f(x) = ";
@@ -54,16 +64,17 @@ namespace slau
                 std::cout << "+";
             if (getCoefElementX(i) != 0 && (getPower() - i - 1) != 0) 
                 std::cout << getCoefElementX(i) << "*x^" << getPower() - i - 1;
-            if ((getPower() - i - 1) == 0)
-                std::cout << getCoefElementX(i) << std::endl;
+            if ((getPower() - i - 1) == 0 && getCoefElementX(i) != 0)
+                std::cout << getCoefElementX(i);
         }
+        std::cout << " " << std::endl;
     }
 
-    CPowerFunction GetFirstDerivative(CPowerFunction & function)
+    CPowerFunction* GetDerivative(CPowerFunction* function)
     {
-        CPowerFunction derivative(function.getPower() - 1);
-        for (int i = 0; i < function.getPower(); i++)
-            derivative.setCoefElementX(i, function.getCoefElementX(i)*(function.getPower() - i - 1));
+        CPowerFunction* derivative = new CPowerFunction(function->getPower() - 1);
+        for (int i = 0; i < function->getPower(); i++)
+            derivative->setCoefElementX(i, function->getCoefElementX(i)*(function->getPower() - i - 1));
 
         return derivative;
     }
