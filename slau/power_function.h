@@ -2,7 +2,7 @@
 
 namespace slau
 {
-
+    // in storage {x^n,...,x^0}
     class CPowerFunction
     {
     public:

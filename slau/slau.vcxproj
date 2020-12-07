@@ -155,6 +155,7 @@
     <ClCompile Include="gauss.cpp" />
     <ClCompile Include="kramer.cpp" />
     <ClCompile Include="lu_decomposition.cpp" />
+    <ClCompile Include="mnk.cpp" />
     <ClCompile Include="newton.cpp" />
     <ClCompile Include="power_function.cpp" />
     <ClCompile Include="rotation.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="include_everywhere.h" />
     <ClInclude Include="kramer.h" />
     <ClInclude Include="lu_decomposition.h" />
+    <ClInclude Include="mnk.h" />
     <ClInclude Include="newton.h" />
     <ClInclude Include="power_function.h" />
     <ClInclude Include="rotation.h" />
