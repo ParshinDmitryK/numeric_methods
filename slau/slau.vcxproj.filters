@@ -48,6 +48,9 @@
     <ClCompile Include="power_function.cpp">
       <Filter>Complementary\Sources</Filter>
     </ClCompile>
+    <ClCompile Include="mnk.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kramer.h">
@@ -73,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="power_function.h">
       <Filter>Complementary\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="mnk.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
