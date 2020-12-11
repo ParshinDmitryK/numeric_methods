@@ -65,7 +65,7 @@ int main()
 
     slau::Kramers_method(mas, right_side, n);
 
- //   slau::Gauss_method(mas,right_side,n);
+    slau::Gauss_method(mas,right_side,n);
 
 	//slau::LU_Decomposition_method(mas, right_side, n);
 
