@@ -6,7 +6,7 @@ USING_STD
 namespace slau
 {
     // matr without i-row and j-column
-    void GetMatr(int **mas, int **p, int i, int j, int m) {
+    void GetMatr(double **mas, double **p, int i, int j, int m) {
         int ki, kj, di, dj;
         di = 0;
         for (ki = 0; ki < m - 1; ki++) { 
@@ -19,16 +19,22 @@ namespace slau
         }
     }
     // Determinant
-    int Determinant(int **mas, int m) {
-        int i, j, d, k, n;
-        int **p;
-        p = new int*[m];
+    double Determinant(double **mas, int m) 
+    {
+        int i, j, k, n;
+        double d;
+        double **p;
+        p = new double*[m];
         for (i = 0; i < m; i++)
-            p[i] = new int[m];
+            p[i] = new double[m];
         j = 0; d = 0;
         k = 1; 
         n = m - 1;
-        if (m < 1) cout << "it is inpossible!";
+        if (m < 1)
+        {
+            cout << "it is inpossible!";
+            return 0;
+        }
         if (m == 1) {
             d = mas[0][0];
             return(d);
@@ -47,7 +53,7 @@ namespace slau
         return(d);
     }
 
-    void change_column(int** mas_start, int* right_side, int column_change, int column_count, int** output)
+    void change_column(double** mas_start, double* right_side, int column_change, int column_count, double** output)
     {
         for (int i = 0; i < column_count; i++)
             for (int j = 0; j < column_count; j++)
@@ -57,44 +63,51 @@ namespace slau
                     output[i][j] = mas_start[i][j];
     }
 
-    void Kramers_method(int ** mas_koef, int * mas_right_side, int x_count)
+    void Kramers_method(double ** mas_koef, double * mas_right_side, const int x_count, bool print_only_asw)
     {
 		TO_NEW_LINE;
-        cout << "Kramers method:" << endl;
+        if (print_only_asw)
+            cout << "Kramers method:" << endl;
         START_TIME;
         int n = x_count;
-        int* right_side = mas_right_side;
-        int** mas = mas_koef;
-
-        cout << "your matrix:" << endl;
+        double* right_side = mas_right_side;
+        double** mas = mas_koef;
 
         int i;
-        int** mas_sch;
-        mas_sch = new int*[n];
-        int* mas_det;
-        mas_det = new int[n];
-        for (i = 0; i < n; i++)
-        {
-            mas_sch[i] = new int[n];
-        }
+        double** mas_sch;
+        mas_sch = new double*[n];
+        double* mas_det;
+        mas_det = new double[n];
 
         for (i = 0; i < n; i++)
         {
-            for (int j = 0; j < n; j++)
-                cout << mas[i][j] << "  ";
-            cout << "" << endl;
+            mas_sch[i] = new double[n];
         }
+
         
-        int det_main = Determinant(mas, n);
+        double det_main = Determinant(mas, n);
         for (i = 0; i < n; i++)
         {
             change_column(mas, right_side, i, n, mas_sch);
             mas_det[i] = Determinant(mas_sch, n);
         }
-        cout << "main determinant = " << det_main << endl;
+        if (print_only_asw)
+        {
+            cout << "your matrix:" << endl;
+            for (i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                    PRINT_DOUBLE_MATRIX_ELEMENT(mas[i][j]);
+                cout << "" << endl;
+            }
+            cout << "main determinant = " << det_main << endl;
+        }
         for (i = 0; i < n; i++)
             cout << "x[" << i << "] = " << (mas_det[i] / det_main) << endl;
-        END_TIME;
-        PRINT_RESULT_CALC_TIME;
+        if (print_only_asw)
+        {
+            END_TIME;
+            PRINT_RESULT_CALC_TIME;
+        }
     }
 }
