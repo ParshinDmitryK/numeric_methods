@@ -18,12 +18,12 @@ int main()
     // set variables
     int i;
     int n = 3;            // count of strangers
-    int** mas;            // koef mas
-    int* right_side;      // mas y(x)
-    mas = new int*[n];
-    right_side = new int[n];
+    double** mas;            // koef mas
+    double* right_side;      // mas y(x)
+    mas = new double*[n];
+    right_side = new double[n];
     for (i = 0; i < n; i++)
-        mas[i] = new int[n];
+        mas[i] = new double[n];
 
     /*
      (x1)\ / { 1, 1, 2 }
@@ -65,13 +65,13 @@ int main()
 
     slau::Kramers_method(mas, right_side, n);
 
-    slau::Gauss_method(mas,right_side,n);
+ //   slau::Gauss_method(mas,right_side,n);
 
-	slau::LU_Decomposition_method(mas, right_side, n);
+	//slau::LU_Decomposition_method(mas, right_side, n);
 
-    slau::Rotation_method(mas, right_side, n);
+ //   slau::Rotation_method(mas, right_side, n);
 
-    slau::Cholesky_method(mas, right_side, n);
+ //   slau::Cholesky_method(mas, right_side, n);
 
     DROW_KUBE
     slau::CPowerFunction* eqtn = new slau::CPowerFunction(4, 1.0, 0.0, -2.0, -5.0);
@@ -102,7 +102,7 @@ int main()
     mass_y[5] = 85;
     mass_y[6] = 72;
 
-    slau::mnk_line(mass_x, mass_y, n_for_mnk);
+    slau::mnk(mass_x, mass_y, n_for_mnk, 2);
 
     system("pause");
     return 0;

@@ -3,5 +3,5 @@
 
 namespace slau
 {
-    void mnk_line(double* mas_x, double* mas_y, int& count_elem);
+    void mnk(double* mas_x, double* mas_y, int& count_elem, int count_koef);
 }
