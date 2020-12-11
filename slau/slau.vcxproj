@@ -160,7 +160,7 @@
     <ClCompile Include="newton.cpp" />
     <ClCompile Include="power_function.cpp" />
     <ClCompile Include="rotation.cpp" />
-    <ClCompile Include="slau.cpp" />
+    <ClCompile Include="numeric.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cholesky.h" />

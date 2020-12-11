@@ -24,9 +24,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="slau.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="gauss.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -49,6 +46,9 @@
       <Filter>Complementary\Sources</Filter>
     </ClCompile>
     <ClCompile Include="mnk.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="numeric.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
