@@ -1,4 +1,4 @@
-#include "include_everywhere.h"
+#include "../support/include_everywhere.h"
 #include "kramer.h"
 
 USING_STD
@@ -66,7 +66,7 @@ namespace slau
     void Kramers_method(double ** mas_koef, double * mas_right_side, const int x_count, bool print_only_asw)
     {
 		TO_NEW_LINE;
-        if (print_only_asw)
+        if (!print_only_asw)
             cout << "Kramers method:" << endl;
         START_TIME;
         int n = x_count;
@@ -91,7 +91,7 @@ namespace slau
             change_column(mas, right_side, i, n, mas_sch);
             mas_det[i] = Determinant(mas_sch, n);
         }
-        if (print_only_asw)
+        if (!print_only_asw)
         {
             cout << "your matrix:" << endl;
             for (i = 0; i < n; i++)
@@ -104,7 +104,7 @@ namespace slau
         }
         for (i = 0; i < n; i++)
             cout << "x[" << i << "] = " << (mas_det[i] / det_main) << endl;
-        if (print_only_asw)
+        if (!print_only_asw)
         {
             END_TIME;
             PRINT_RESULT_CALC_TIME;

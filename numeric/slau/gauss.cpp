@@ -1,14 +1,15 @@
-#include "include_everywhere.h"
+#include "../support/include_everywhere.h"
 #include "gauss.h"
 
 USING_STD
 
 namespace slau
 {
-    void Gauss_method(int** mas_koef, int* mas_right_side, int x_count)
+    void Gauss_method(double** mas_koef, double* mas_right_side, int x_count, bool print_only_asw)
     {
         TO_NEW_LINE;
-        cout << "Gauss method:" << endl;
+        if (!print_only_asw)
+            cout << "Gauss method:" << endl;
         START_TIME;
         int n, m, i, j, k;
         n = x_count;
@@ -27,12 +28,15 @@ namespace slau
         }
         makeOneMatrix(mas_koef, mas_right_side, n, m, origin);
 
-        cout << "your matrix:" << endl;
-        for (i = 0; i < n; i++)
+        if (!print_only_asw)
         {
-            for (j = 0; j < m; j++)
-                PRINT_INT_MATRIX_ELEMENT(origin[i][j]);
+            cout << "your matrix:" << endl;
+            for (i = 0; i < n; i++)
+            {
+                for (j = 0; j < m; j++)
+                    PRINT_INT_MATRIX_ELEMENT(origin[i][j]);
                 cout << "" << endl;
+            }
         }
         for (k = 0; k < n; k++)
         {
@@ -57,14 +61,17 @@ namespace slau
                     origin[i][j] = after_gauss[i][j];
             }
         }
-        cout << "matrix result:" << endl;
-        for (i = 0; i < n; i++)
-        {
-            for (j = 0; j < m; j++)
-                PRINT_DOUBLE_MATRIX_ELEMENT(after_gauss[i][j]);
-            cout << endl;
-        }
 
+        if (!print_only_asw)
+        {
+            cout << "matrix result:" << endl;
+            for (i = 0; i < n; i++)
+            {
+                for (j = 0; j < m; j++)
+                    PRINT_DOUBLE_MATRIX_ELEMENT(after_gauss[i][j]);
+                cout << endl;
+            }
+        }
         // calculating all x[i]
         masX[x_count - 1] = after_gauss[x_count - 1][x_count] / after_gauss[x_count - 1][x_count - 1];
         for (i = x_count - 2; i >= 0; i--)
@@ -84,7 +91,11 @@ namespace slau
             delete origin[i];
             delete after_gauss[i];
         }
-        END_TIME;
-        PRINT_RESULT_CALC_TIME;
+
+        if (!print_only_asw)
+        {
+            END_TIME;
+            PRINT_RESULT_CALC_TIME;
+        }
     }
 }

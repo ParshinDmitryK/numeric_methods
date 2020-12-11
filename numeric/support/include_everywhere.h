@@ -48,3 +48,16 @@ inline void makeOneMatrix(int** mas_koef, int* mas_right_side, int rows_count, i
                 masoutput[i][j] = mas_right_side[i];
         }
 }
+
+template<class Type>
+inline void makeOneMatrix(Type** mas_koef, Type* mas_right_side, int rows_count, int column_count, Type** masoutput)
+{
+    for (int i = 0; i < rows_count; i++)
+        for (int j = 0; j < column_count; j++)
+        {
+            if (j < column_count - 1)
+                masoutput[i][j] = mas_koef[i][j];
+            else
+                masoutput[i][j] = mas_right_side[i];
+        }
+}

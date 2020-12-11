@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="numeric.cpp" />
+    <ClCompile Include="functions\mnk.cpp">
+      <Filter>functions\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="slau\cholesky.cpp">
+      <Filter>slau\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="slau\gauss.cpp">
+      <Filter>slau\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="slau\kramer.cpp">
+      <Filter>slau\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="slau\lu_decomposition.cpp">
+      <Filter>slau\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="slau\newton.cpp">
+      <Filter>slau\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="slau\rotation.cpp">
+      <Filter>slau\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="support\power_function.cpp">
+      <Filter>support</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="functions\mnk.h">
+      <Filter>functions\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="slau\cholesky.h">
+      <Filter>slau\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="slau\gauss.h">
+      <Filter>slau\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="slau\kramer.h">
+      <Filter>slau\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="slau\lu_decomposition.h">
+      <Filter>slau\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="slau\newton.h">
+      <Filter>slau\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="slau\rotation.h">
+      <Filter>slau\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="support\include_everywhere.h">
+      <Filter>support</Filter>
+    </ClInclude>
+    <ClInclude Include="support\power_function.h">
+      <Filter>support</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="slau">
+      <UniqueIdentifier>{2680e643-3b2f-4bd3-b4ec-a233d5346e91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="functions">
+      <UniqueIdentifier>{a0493b7b-2939-4ad0-8def-88f6089a8a82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="functions\Source">
+      <UniqueIdentifier>{bab3224d-4cfa-4d80-9f3c-80694c8cb2ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="functions\Headers">
+      <UniqueIdentifier>{158de0cb-9070-434d-a4ce-e863fe42f553}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="slau\Source">
+      <UniqueIdentifier>{06a24cbf-379e-415a-90b2-895750c0cbe6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="slau\Headers">
+      <UniqueIdentifier>{58706d3c-71e5-4bea-8e10-f02cb3ebe47b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="support">
+      <UniqueIdentifier>{3f89e613-140f-4a5d-94ed-fe1bd7407038}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="numeric.rc" />
+  </ItemGroup>
+</Project>

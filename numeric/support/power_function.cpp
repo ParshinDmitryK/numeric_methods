@@ -3,7 +3,7 @@
 
 #include <cmath>
 
-namespace slau
+namespace support
 {
     CPowerFunction::CPowerFunction(int count_coef)
     {

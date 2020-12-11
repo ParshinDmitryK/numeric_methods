@@ -1,12 +1,12 @@
-#include "include_everywhere.h"
 #include "mnk.h"
-#include "kramer.h"
+#include "../support/include_everywhere.h"
+#include "../slau/gauss.h"
 
-#include "power_function.h"
+#include "../support/power_function.h"
 
 USING_STD
 
-namespace slau
+namespace functions
 {
     void mnk(double * mas_x, double * mas_y, int & count_elem, int count_koef)
     {
@@ -43,7 +43,7 @@ namespace slau
         }
 
         cout << "approximation koefficents: ";
-        slau::Kramers_method(gamma, b_m, count_koef, false);
+        slau::Gauss_method(gamma, b_m, count_koef, true);
         
         //for (i = 0; i <= count_koef; i++)
         //    cout << "a[" << i << "]=" << a[i] << " " << endl;
