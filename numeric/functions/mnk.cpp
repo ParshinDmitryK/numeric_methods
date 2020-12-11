@@ -45,9 +45,6 @@ namespace functions
         cout << "approximation koefficents: ";
         slau::Gauss_method(gamma, b_m, count_koef, true);
         
-        //for (i = 0; i <= count_koef; i++)
-        //    cout << "a[" << i << "]=" << a[i] << " " << endl;
-        
         END_TIME;
         PRINT_RESULT_CALC_TIME;
     }
