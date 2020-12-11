@@ -1,6 +1,6 @@
 #pragma once
 
-namespace slau
+namespace support
 {
     // in storage {x^n,...,x^0}
     class CPowerFunction

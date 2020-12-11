@@ -1,5 +1,5 @@
-#include "include_everywhere.h"
-#include "power_function.h"
+#include "../support/include_everywhere.h"
+#include "../support/power_function.h"
 
 #include "newton.h"
 
@@ -7,15 +7,15 @@ USING_STD;
 
 namespace slau
 {
-    void Newton_method(slau::CPowerFunction* funct, int left_side, int right_side, double deviation)
+    void Newton_method(support::CPowerFunction* funct, int left_side, int right_side, double deviation)
     {
         TO_NEW_LINE;
         cout << "Newtons method:" << endl;
         START_TIME;
         funct->printFunction();
-        slau::CPowerFunction* first_derivative = GetDerivative(funct);
+        support::CPowerFunction* first_derivative = GetDerivative(funct);
         first_derivative->printFunction();
-        slau::CPowerFunction* second_derivative = GetDerivative(GetDerivative(funct));
+        support::CPowerFunction* second_derivative = GetDerivative(GetDerivative(funct));
         second_derivative->printFunction();
         
         double x_next = (right_side - left_side) / 2;

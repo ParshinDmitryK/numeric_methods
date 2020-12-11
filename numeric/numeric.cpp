@@ -1,17 +1,17 @@
-﻿// slau.cpp : This file contains the 'main' function. Program execution begins and ends there.
+﻿// numeric.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-#include "include_everywhere.h"
-#include "power_function.h"
+#include "support/include_everywhere.h"
+#include "support/power_function.h"
 
-#include "kramer.h"
-#include "gauss.h"
-#include "lu_decomposition.h"
-#include "rotation.h"
-#include "cholesky.h"
-#include "newton.h"
-#include "mnk.h"
+#include "slau/kramer.h"
+#include "slau/gauss.h"
+#include "slau/lu_decomposition.h"
+#include "slau/rotation.h"
+#include "slau/cholesky.h"
+#include "slau/newton.h"
+#include "functions/mnk.h"
 
-USING_STD
+USING_STD;
 
 int main()
 {
@@ -73,8 +73,8 @@ int main()
 
  //   slau::Cholesky_method(mas, right_side, n);
 
-    DROW_KUBE
-    slau::CPowerFunction* eqtn = new slau::CPowerFunction(4, 1.0, 0.0, -2.0, -5.0);
+    DROW_KUBE;
+    support::CPowerFunction* eqtn = new support::CPowerFunction(4, 1.0, 0.0, -2.0, -5.0);
     eqtn->printFunction();
     slau::Newton_method(eqtn, 2, 3, 0.001);
 
@@ -102,7 +102,7 @@ int main()
     mass_y[5] = 85;
     mass_y[6] = 72;
 
-    slau::mnk(mass_x, mass_y, n_for_mnk, 2);
+    functions::mnk(mass_x, mass_y, n_for_mnk, 2);
 
     system("pause");
     return 0;
