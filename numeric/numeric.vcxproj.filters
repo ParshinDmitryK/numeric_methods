@@ -17,14 +17,14 @@
     <ClCompile Include="slau\lu_decomposition.cpp">
       <Filter>slau\Source</Filter>
     </ClCompile>
-    <ClCompile Include="slau\newton.cpp">
-      <Filter>slau\Source</Filter>
-    </ClCompile>
     <ClCompile Include="slau\rotation.cpp">
       <Filter>slau\Source</Filter>
     </ClCompile>
     <ClCompile Include="support\power_function.cpp">
       <Filter>support</Filter>
+    </ClCompile>
+    <ClCompile Include="functions\newton.cpp">
+      <Filter>functions\Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -43,9 +43,6 @@
     <ClInclude Include="slau\lu_decomposition.h">
       <Filter>slau\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="slau\newton.h">
-      <Filter>slau\Headers</Filter>
-    </ClInclude>
     <ClInclude Include="slau\rotation.h">
       <Filter>slau\Headers</Filter>
     </ClInclude>
@@ -56,6 +53,9 @@
       <Filter>support</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="functions\newton.h">
+      <Filter>functions\Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="slau">

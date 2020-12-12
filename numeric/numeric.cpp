@@ -8,7 +8,7 @@
 #include "slau/lu_decomposition.h"
 #include "slau/rotation.h"
 #include "slau/cholesky.h"
-#include "slau/newton.h"
+#include "functions/newton.h"
 #include "functions/mnk.h"
 
 USING_STD;
@@ -67,16 +67,15 @@ int main()
 
     slau::Gauss_method(mas,right_side,n);
 
-	//slau::LU_Decomposition_method(mas, right_side, n);
+	slau::LU_Decomposition_method(mas, right_side, n);
 
- //   slau::Rotation_method(mas, right_side, n);
+    slau::Rotation_method(mas, right_side, n);
 
- //   slau::Cholesky_method(mas, right_side, n);
+    slau::Cholesky_method(mas, right_side, n);
 
     DROW_KUBE;
     support::CPowerFunction* eqtn = new support::CPowerFunction(4, 1.0, 0.0, -2.0, -5.0);
-    eqtn->printFunction();
-    slau::Newton_method(eqtn, 2, 3, 0.001);
+    functions::Newton_method(eqtn, 2, 3, 0.001);
 
     int n_for_mnk;
     double* mass_x;

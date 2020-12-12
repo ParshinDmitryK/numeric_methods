@@ -19,7 +19,7 @@ namespace slau
         }
     }
     // Determinant
-    double Determinant(double **mas, int m) 
+    double Determinant(double **mas, const int m)
     {
         int i, j, k, n;
         double d;
@@ -53,7 +53,7 @@ namespace slau
         return(d);
     }
 
-    void change_column(double** mas_start, double* right_side, int column_change, int column_count, double** output)
+    void change_column(double** mas_start, double* right_side, const int column_change, const int column_count, double** output)
     {
         for (int i = 0; i < column_count; i++)
             for (int j = 0; j < column_count; j++)
@@ -63,11 +63,14 @@ namespace slau
                     output[i][j] = mas_start[i][j];
     }
 
-    void Kramers_method(double ** mas_koef, double * mas_right_side, const int x_count, bool print_only_asw)
+    void Kramers_method(double ** mas_koef, double * mas_right_side, const int x_count, const bool print_only_asw)
     {
 		TO_NEW_LINE;
         if (!print_only_asw)
+        {
+            NEW_METHOD;
             cout << "Kramers method:" << endl;
+        }
         START_TIME;
         int n = x_count;
         double* right_side = mas_right_side;
@@ -104,10 +107,12 @@ namespace slau
         }
         for (i = 0; i < n; i++)
             cout << "x[" << i << "] = " << (mas_det[i] / det_main) << endl;
+        
+        END_TIME;
         if (!print_only_asw)
         {
-            END_TIME;
             PRINT_RESULT_CALC_TIME;
+            NEW_METHOD;
         }
     }
 }

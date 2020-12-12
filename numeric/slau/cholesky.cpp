@@ -5,10 +5,14 @@ USING_STD
 
 namespace slau
 {
-    void Cholesky_method(int ** mas_koef, int * mas_right_side, int x_count)
+    void Cholesky_method(double ** mas_koef, double * mas_right_side, const int x_count, const bool print_only_asw)
     {
         TO_NEW_LINE;
-        cout << "Cholesky method:" << endl;
+        if (!print_only_asw)
+        {
+            NEW_METHOD;
+            cout << "Cholesky method:" << endl;
+        }
         START_TIME;
 
         int i, j, k;
@@ -43,7 +47,7 @@ namespace slau
                         sum_ELij = sum_ELij + mas_U[k][i] * mas_U[k][j];
                     mas_U[i][j] = (mas_koef[i][j] - sum_ELij) / mas_U[i][i];
                 }
-                else  
+                else
                     mas_U[i][j] = 0;
             }
         }
@@ -57,7 +61,7 @@ namespace slau
             mas_Y[i] = (mas_right_side[i] - sum_ELij) / mas_U[i][i];
         }
 
-        for (i = x_count - 1; i >= 0; i--) 
+        for (i = x_count - 1; i >= 0; i--)
         {
             sum_ELij = 0;
             for (k = i + 1; k < x_count; k++)
@@ -65,12 +69,13 @@ namespace slau
             mas_X[i] = (mas_Y[i] - sum_ELij) / mas_U[i][i];
         }
 
-        for (i = 0; i < x_count; i++)
-        {
-            for (j = 0; j < x_count; j++)
-                PRINT_DOUBLE_MATRIX_ELEMENT(mas_U[i][j]);
-            TO_NEW_LINE;
-        }
+        if (!print_only_asw)
+            for (i = 0; i < x_count; i++)
+            {
+                for (j = 0; j < x_count; j++)
+                    PRINT_DOUBLE_MATRIX_ELEMENT(mas_U[i][j]);
+                TO_NEW_LINE;
+            }
 
         for (i = 0; i < x_count; i++)
             cout << "x[" << i << "] = " << mas_X[i] << endl;
@@ -81,6 +86,11 @@ namespace slau
             delete mas_U[i];
 
         END_TIME;
-        PRINT_RESULT_CALC_TIME;
+
+        if (!print_only_asw)
+        {
+            PRINT_RESULT_CALC_TIME;
+            NEW_METHOD;
+        }
     }
 }

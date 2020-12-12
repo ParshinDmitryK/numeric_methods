@@ -5,11 +5,14 @@ USING_STD
 
 namespace slau
 {
-    void Gauss_method(double** mas_koef, double* mas_right_side, int x_count, bool print_only_asw)
+    void Gauss_method(double** mas_koef, double* mas_right_side, const int x_count, const bool print_only_asw)
     {
         TO_NEW_LINE;
         if (!print_only_asw)
+        {
+            NEW_METHOD;
             cout << "Gauss method:" << endl;
+        }
         START_TIME;
         int n, m, i, j, k;
         n = x_count;
@@ -91,11 +94,12 @@ namespace slau
             delete origin[i];
             delete after_gauss[i];
         }
-
+               
+        END_TIME;
         if (!print_only_asw)
         {
-            END_TIME;
             PRINT_RESULT_CALC_TIME;
+            NEW_METHOD;
         }
     }
 }
