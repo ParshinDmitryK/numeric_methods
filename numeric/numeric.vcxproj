@@ -153,23 +153,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="functions\mnk.cpp" />
+    <ClCompile Include="functions\newton.cpp" />
     <ClCompile Include="numeric.cpp" />
     <ClCompile Include="slau\cholesky.cpp" />
     <ClCompile Include="slau\gauss.cpp" />
     <ClCompile Include="slau\kramer.cpp" />
     <ClCompile Include="slau\lu_decomposition.cpp" />
-    <ClCompile Include="slau\newton.cpp" />
     <ClCompile Include="slau\rotation.cpp" />
     <ClCompile Include="support\power_function.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="functions\mnk.h" />
+    <ClInclude Include="functions\newton.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="slau\cholesky.h" />
     <ClInclude Include="slau\gauss.h" />
     <ClInclude Include="slau\kramer.h" />
     <ClInclude Include="slau\lu_decomposition.h" />
-    <ClInclude Include="slau\newton.h" />
     <ClInclude Include="slau\rotation.h" />
     <ClInclude Include="support\include_everywhere.h" />
     <ClInclude Include="support\power_function.h" />

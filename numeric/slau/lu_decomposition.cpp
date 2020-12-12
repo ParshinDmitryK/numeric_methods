@@ -5,10 +5,14 @@ USING_STD
 
 namespace slau
 {
-	void LU_Decomposition_method(int** mas_koef, int* mas_right_side, int x_count)
+	void LU_Decomposition_method(double** mas_koef, double* mas_right_side, const int x_count, const bool print_only_asw)
 	{
 		TO_NEW_LINE;
-		cout << "LU-Decomposition method:" << endl;
+        if (!print_only_asw)
+        {
+            NEW_METHOD;
+            cout << "LU-Decomposition method:" << endl;
+        }
         START_TIME;
 		int i, j, s;
 		double sum;
@@ -68,26 +72,34 @@ namespace slau
 			x[i] = y[i] - sum;
 		}
 
-		cout << "L-matrix:" << endl;
-		for (i = 0; i < x_count; i++) 
-		{
-			for (j = 0; j < x_count; j++)
-				PRINT_DOUBLE_MATRIX_ELEMENT(mas_L[i][j])
-			cout << endl;
-		}
+        if (!print_only_asw)
+        {
+            cout << "L-matrix:" << endl;
+            for (i = 0; i < x_count; i++)
+            {
+                for (j = 0; j < x_count; j++)
+                    PRINT_DOUBLE_MATRIX_ELEMENT(mas_L[i][j])
+                    cout << endl;
+            }
 
-		cout << "U-matrix:" << endl;
-		for (i = 0; i < x_count; i++) 
-		{
-			for (j = 0; j < x_count; j++)
-				PRINT_DOUBLE_MATRIX_ELEMENT(mas_U[i][j])
-			cout << endl;
-		}
+            cout << "U-matrix:" << endl;
+            for (i = 0; i < x_count; i++)
+            {
+                for (j = 0; j < x_count; j++)
+                    PRINT_DOUBLE_MATRIX_ELEMENT(mas_U[i][j])
+                    cout << endl;
+            }
+        }
 
 		for (i = 0; i < x_count; i++)
 			cout << "x[" << i << "] = " << x[i] << endl;
         END_TIME;
-        PRINT_RESULT_CALC_TIME;
+
+        if (!print_only_asw)
+        {
+            PRINT_RESULT_CALC_TIME;
+            NEW_METHOD;
+        }
 	}
 
 }

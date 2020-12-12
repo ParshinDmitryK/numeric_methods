@@ -15,6 +15,8 @@
 
 #define TO_NEW_LINE std::cout << std::endl;
 
+#define NEW_METHOD std::cout << "#####################################################" << std::endl;
+
 #define PRINT_INT_MATRIX_ELEMENT(val) \
 if (val < 0) \
     std::cout << val << "   "; \

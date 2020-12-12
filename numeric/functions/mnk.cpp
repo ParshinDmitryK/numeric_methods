@@ -8,25 +8,27 @@ USING_STD
 
 namespace functions
 {
-    void mnk(double * mas_x, double * mas_y, int & count_elem, int count_koef)
+    void mnk(double * mas_x, double * mas_y, const int & count_elem, const int count_koef, const bool print_only_asw)
     {
         TO_NEW_LINE;
-        cout << "MNK method:" << endl;
+        if (!print_only_asw)
+        {
+            NEW_METHOD;
+            cout << "MNK method:" << endl;
+        }
         START_TIME;
 
         int i, j, k;
         double** gamma;
         double* b_m;
         double sum_gamma_l_k = 0, sum_b_l = 0;
+        
         gamma = new double*[count_koef];
+        b_m = new double[count_koef];
 
         for (i = 0; i <= count_koef; i++)
-        {
             gamma[i] = new double[count_koef];
-        }
-        b_m = new double[count_koef];
-        double* a = new double[count_koef];
-        double* t = new double[count_koef];
+        
         for (i = 0; i <= count_koef; i++)
         {
             for (j = 0; j <= count_koef; j++)
@@ -46,6 +48,10 @@ namespace functions
         slau::Gauss_method(gamma, b_m, count_koef, true);
         
         END_TIME;
-        PRINT_RESULT_CALC_TIME;
+        if (!print_only_asw)
+        {
+            PRINT_RESULT_CALC_TIME;
+            NEW_METHOD;
+        }
     }
 }

@@ -5,10 +5,14 @@ USING_STD
 
 namespace slau
 {
-    void Rotation_method(int**mas_koef, int*mas_right_side, int x_count)
+    void Rotation_method(double**mas_koef, double*mas_right_side, const int x_count, const bool print_only_asw)
     {
         TO_NEW_LINE;
-        cout << "Rotation method:" << endl;
+        if (!print_only_asw)
+        {
+            NEW_METHOD;
+            cout << "Rotation method:" << endl;
+        }
         START_TIME;
         int i, j, k;
         double** origin;
@@ -54,6 +58,10 @@ namespace slau
             cout << "x[" << i << "] = " << masX[i] << endl;
 
         END_TIME;
-        PRINT_RESULT_CALC_TIME;
+        if (!print_only_asw)
+        {
+            PRINT_RESULT_CALC_TIME;
+            NEW_METHOD;
+        }
     }    
 }
