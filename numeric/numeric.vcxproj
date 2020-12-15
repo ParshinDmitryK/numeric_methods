@@ -152,6 +152,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="functions\fork.cpp" />
     <ClCompile Include="functions\mnk.cpp" />
     <ClCompile Include="functions\newton.cpp" />
     <ClCompile Include="numeric.cpp" />
@@ -163,6 +164,7 @@
     <ClCompile Include="support\power_function.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="functions\fork.h" />
     <ClInclude Include="functions\mnk.h" />
     <ClInclude Include="functions\newton.h" />
     <ClInclude Include="resource.h" />

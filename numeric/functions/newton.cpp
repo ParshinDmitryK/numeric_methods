@@ -7,7 +7,7 @@ USING_STD;
 
 namespace functions
 {
-    void Newton_method(support::CPowerFunction* funct, const double left_side, const double right_side, double deviation, const bool print_only_asw)
+    void Newton_method(support::CPowerFunction* funct, const double left_side, const double right_side, const double deviation, const bool print_only_asw)
     {
         TO_NEW_LINE;
         if (!print_only_asw)
