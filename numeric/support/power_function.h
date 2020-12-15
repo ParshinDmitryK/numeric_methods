@@ -2,7 +2,7 @@
 
 namespace support
 {
-    // in storage {x^n,...,x^0}
+    // in storage is {x^n,...,x^0}
     class CPowerFunction
     {
     public:

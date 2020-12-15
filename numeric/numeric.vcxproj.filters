@@ -26,6 +26,9 @@
     <ClCompile Include="functions\newton.cpp">
       <Filter>functions\Source</Filter>
     </ClCompile>
+    <ClCompile Include="functions\fork.cpp">
+      <Filter>functions\Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="functions\mnk.h">
@@ -54,6 +57,9 @@
     </ClInclude>
     <ClInclude Include="resource.h" />
     <ClInclude Include="functions\newton.h">
+      <Filter>functions\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="functions\fork.h">
       <Filter>functions\Headers</Filter>
     </ClInclude>
   </ItemGroup>

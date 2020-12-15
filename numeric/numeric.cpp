@@ -10,6 +10,7 @@
 #include "slau/cholesky.h"
 #include "functions/newton.h"
 #include "functions/mnk.h"
+#include "functions/fork.h"
 
 USING_STD;
 
@@ -75,7 +76,10 @@ int main()
 
     DROW_KUBE;
     support::CPowerFunction* eqtn = new support::CPowerFunction(4, 1.0, 0.0, -2.0, -5.0);
+    
     functions::Newton_method(eqtn, 2, 3, 0.001);
+
+    functions::fork_method(eqtn, 2, 3, 0.001);
 
     int n_for_mnk;
     double* mass_x;
