@@ -8,6 +8,7 @@
 #include "slau/lu_decomposition.h"
 #include "slau/rotation.h"
 #include "slau/cholesky.h"
+#include "slau/simple_iteration.h"
 #include "functions/newton.h"
 #include "functions/mnk.h"
 #include "functions/fork.h"
@@ -72,7 +73,9 @@ int main()
 
     slau::Rotation_method(mas, right_side, n);
 
-    slau::Cholesky_method(mas, right_side, n);
+    //slau::Cholesky_method(mas, right_side, n);
+
+    slau::simple_iteration_method(mas, right_side, n, 0.001);
 
     DROW_KUBE;
     support::CPowerFunction* eqtn = new support::CPowerFunction(4, 1.0, 0.0, -2.0, -5.0);

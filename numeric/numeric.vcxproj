@@ -161,6 +161,7 @@
     <ClCompile Include="slau\kramer.cpp" />
     <ClCompile Include="slau\lu_decomposition.cpp" />
     <ClCompile Include="slau\rotation.cpp" />
+    <ClCompile Include="slau\simple_iteration.cpp" />
     <ClCompile Include="support\power_function.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +174,7 @@
     <ClInclude Include="slau\kramer.h" />
     <ClInclude Include="slau\lu_decomposition.h" />
     <ClInclude Include="slau\rotation.h" />
+    <ClInclude Include="slau\simple_iteration.h" />
     <ClInclude Include="support\include_everywhere.h" />
     <ClInclude Include="support\power_function.h" />
   </ItemGroup>
