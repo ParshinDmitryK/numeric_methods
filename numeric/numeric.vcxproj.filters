@@ -29,6 +29,9 @@
     <ClCompile Include="functions\fork.cpp">
       <Filter>functions\Source</Filter>
     </ClCompile>
+    <ClCompile Include="slau\simple_iteration.cpp">
+      <Filter>slau\Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="functions\mnk.h">
@@ -61,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="functions\fork.h">
       <Filter>functions\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="slau\simple_iteration.h">
+      <Filter>slau\Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
