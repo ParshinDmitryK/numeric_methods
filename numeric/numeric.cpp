@@ -78,35 +78,32 @@ int main()
     slau::simple_iteration_method(mas, right_side, n, 0.001);
 
     DROW_KUBE;
-    support::CPowerFunction* eqtn = new support::CPowerFunction(4, 1.0, 0.0, -2.0, -5.0);
+    support::CPowerFunction* eqtn = new support::CPowerFunction(4, -1.0, -2.0, -4.0, 10.0);
     
-    functions::Newton_method(eqtn, 2, 3, 0.001);
+    functions::fork_method(eqtn, 0, 2, 0.001);
 
-    functions::fork_method(eqtn, 2, 3, 0.001);
+    functions::Newton_method(eqtn, 0, 2, 0.001);
+
 
     int n_for_mnk;
     double* mass_x;
     double* mass_y;
 
-    n_for_mnk = 7;
+    n_for_mnk = 5;
     mass_x = new double[n_for_mnk];
     mass_y = new double[n_for_mnk];
 
-    mass_x[0] = 176;
-    mass_x[1] = 165;
-    mass_x[2] = 170;
-    mass_x[3] = 180;
-    mass_x[4] = 160;
-    mass_x[5] = 186;
-    mass_x[6] = 172;
+    mass_x[0] = 0;
+    mass_x[1] = 0.1;
+    mass_x[2] = 0.4;
+    mass_x[3] = 0.6;
+    mass_x[4] = 1;
     
-    mass_y[0] = 68;
-    mass_y[1] = 63;
-    mass_y[2] = 65;
-    mass_y[3] = 78;
-    mass_y[4] = 59;
-    mass_y[5] = 85;
-    mass_y[6] = 72;
+    mass_y[0] = 1.2;
+    mass_y[1] = 1.3;
+    mass_y[2] = 1.55;
+    mass_y[3] = 1.62;
+    mass_y[4] = 1.8;
 
     functions::mnk(mass_x, mass_y, n_for_mnk, 2);
 
