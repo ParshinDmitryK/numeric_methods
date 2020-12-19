@@ -9,6 +9,7 @@
 #include "slau/rotation.h"
 #include "slau/cholesky.h"
 #include "slau/simple_iteration.h"
+#include "functions/lagrange_polynomial.h"
 #include "functions/newton.h"
 #include "functions/mnk.h"
 #include "functions/fork.h"
@@ -84,6 +85,27 @@ int main()
 
     functions::Newton_method(eqtn, 0, 2, 0.001);
 
+    int n_for_interpolation;
+    double* mass_x_for_interpolation;
+    double* mass_y_for_interpolation;
+
+    n_for_interpolation = 5;
+    mass_x_for_interpolation = new double[n_for_interpolation];
+    mass_y_for_interpolation = new double[n_for_interpolation];
+
+    mass_x_for_interpolation[0] = -1;
+    mass_x_for_interpolation[1] = -0.5;
+    mass_x_for_interpolation[2] = 0;
+    mass_x_for_interpolation[3] = 0.5;
+    mass_x_for_interpolation[4] = 1;
+
+    mass_y_for_interpolation[0] = 0;
+    mass_y_for_interpolation[1] = 1.5;
+    mass_y_for_interpolation[2] = 2;
+    mass_y_for_interpolation[3] = 1.125;
+    mass_y_for_interpolation[4] = 0;
+
+    functions::lagrange_polynomial_value_in_point(mass_x_for_interpolation, mass_y_for_interpolation, n_for_interpolation, 0.5);
 
     int n_for_mnk;
     double* mass_x;
