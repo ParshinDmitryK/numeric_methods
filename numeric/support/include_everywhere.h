@@ -24,10 +24,16 @@ else \
     std::cout << val << "    ";
 
 #define PRINT_DOUBLE_MATRIX_ELEMENT(val) \
-if (val - (int)val > 0.0001) \
-std::cout << val << "   "; \
+if (val < 0) \
+    if (val - (int)val > 0.0001) \
+        std::cout << val << "   "; \
+    else \
+        std::cout << val << "         "; \
 else \
-std::cout << val << "         ";
+    if (val - (int)val > 0.0001) \
+        std::cout << val << "    "; \
+    else \
+        std::cout << val << "          "; \
 
 #define DROW_KUBE \
     TO_NEW_LINE \

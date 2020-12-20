@@ -13,6 +13,7 @@
 #include "functions/newton.h"
 #include "functions/mnk.h"
 #include "functions/fork.h"
+#include "functions/gorner.h"
 
 USING_STD;
 
@@ -128,6 +129,19 @@ int main()
     mass_y[4] = 1.8;
 
     functions::mnk(mass_x, mass_y, n_for_mnk, 2);
+
+    support::CPowerFunction* funct_for_gorner = new support::CPowerFunction(6, 1.073, -0.143, 0.568, 1.215, -3.146, 1.618);
+
+    double * mass_x_for_gorner = new double[7];
+    mass_x_for_gorner[0] = 0.5;
+    mass_x_for_gorner[1] = 0.75;
+    mass_x_for_gorner[2] = 1.0;
+    mass_x_for_gorner[3] = 1.25;
+    mass_x_for_gorner[4] = 1.5;
+    mass_x_for_gorner[5] = 1.75;
+    mass_x_for_gorner[6] = 2.0;
+
+    functions::gorner_values_method(funct_for_gorner, mass_x_for_gorner, 7);
 
     system("pause");
     return 0;
