@@ -35,6 +35,9 @@
     <ClCompile Include="functions\lagrange_polynomial.cpp">
       <Filter>functions\Source</Filter>
     </ClCompile>
+    <ClCompile Include="functions\gorner.cpp">
+      <Filter>functions\Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="functions\mnk.h">
@@ -72,6 +75,9 @@
       <Filter>slau\Headers</Filter>
     </ClInclude>
     <ClInclude Include="functions\lagrange_polynomial.h">
+      <Filter>functions\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="functions\gorner.h">
       <Filter>functions\Headers</Filter>
     </ClInclude>
   </ItemGroup>
