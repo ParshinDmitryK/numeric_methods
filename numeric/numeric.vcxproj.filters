@@ -38,6 +38,9 @@
     <ClCompile Include="functions\gorner.cpp">
       <Filter>functions\Source</Filter>
     </ClCompile>
+    <ClCompile Include="functions\newton_polynomial.cpp">
+      <Filter>functions\Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="functions\mnk.h">
@@ -78,6 +81,9 @@
       <Filter>functions\Headers</Filter>
     </ClInclude>
     <ClInclude Include="functions\gorner.h">
+      <Filter>functions\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="functions\newton_polynomial.h">
       <Filter>functions\Headers</Filter>
     </ClInclude>
   </ItemGroup>
