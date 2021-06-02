@@ -157,6 +157,7 @@
     <ClCompile Include="functions\lagrange_polynomial.cpp" />
     <ClCompile Include="functions\mnk.cpp" />
     <ClCompile Include="functions\newton.cpp" />
+    <ClCompile Include="functions\newton_polynomial.cpp" />
     <ClCompile Include="numeric.cpp" />
     <ClCompile Include="slau\cholesky.cpp" />
     <ClCompile Include="slau\gauss.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="functions\lagrange_polynomial.h" />
     <ClInclude Include="functions\mnk.h" />
     <ClInclude Include="functions\newton.h" />
+    <ClInclude Include="functions\newton_polynomial.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="slau\cholesky.h" />
     <ClInclude Include="slau\gauss.h" />

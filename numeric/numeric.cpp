@@ -10,6 +10,7 @@
 #include "slau/cholesky.h"
 #include "slau/simple_iteration.h"
 #include "functions/lagrange_polynomial.h"
+#include "functions/newton_polynomial.h"
 #include "functions/newton.h"
 #include "functions/mnk.h"
 #include "functions/fork.h"
@@ -107,6 +108,8 @@ int main()
     mass_y_for_interpolation[4] = 0;
 
     functions::lagrange_polynomial_value_in_point(mass_x_for_interpolation, mass_y_for_interpolation, n_for_interpolation, 0.5);
+
+    functions::newton_polynomial_value_in_point(mass_x_for_interpolation, mass_y_for_interpolation, n_for_interpolation, 0.5);
 
     int n_for_mnk;
     double* mass_x;
